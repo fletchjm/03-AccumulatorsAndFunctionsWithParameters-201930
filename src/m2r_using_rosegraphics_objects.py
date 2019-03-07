@@ -52,7 +52,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #                color, radius, center
 #
 #     f. What does a RoseWindow RENDER method do?
-#            Delays the ability to close the window
+#            puts all the graphic on the window
 #
 #     g. When is a RoseWindow close_on_mouse_click method call
 #        necessary?  Why?

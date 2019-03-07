@@ -17,7 +17,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #     a. For the RoseGraphics coordinate system:
 #
 #        -- Where is the (0, 0) point on the screen?
-#              Center of the screen
+#              Upper left corner
 #
 #        -- In what direction on the screen
 #           does the positive X-axis point?
@@ -25,7 +25,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #
 #        -- In what direction on the screen
 #           does the positive Y-axis point?
-#              Up
+#              down
 #
 #     b. Write a line of code that constructs a RoseWindow object:
 #            window = rg.RoseWindow

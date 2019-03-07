@@ -272,6 +272,12 @@ def run_test_fancy_sums_of_digits():
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = 8
+    answer = fancy_sums_of_digits(10)
+    print('Test 1 expected:', expected)
+    print('        actual: ', answer)
+
     # -------------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
     # the correct (expected) answer for that test case.  (It's easy.)

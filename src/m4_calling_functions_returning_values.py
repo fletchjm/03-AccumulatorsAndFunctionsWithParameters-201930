@@ -173,7 +173,7 @@ def run_test_digits_in_cube():
     # Test 3:
     expected = 10
     answer = digits_in_cube(4)
-    print('Test 1 expected:', expected)
+    print('Test 3 expected:', expected)
     print('        actual: ', answer)
 
 def digits_in_cube(n):
@@ -225,13 +225,13 @@ def run_test_digits_in_power():
     # Test 2:
     expected = 8
     answer = digits_in_power(2, 3)
-    print('Test 1 expected:', expected)
+    print('Test 2 expected:', expected)
     print('        actual: ', answer)
 
     # Test 3:
     expected = 9
     answer = digits_in_power(3, 3)
-    print('Test 1 expected:', expected)
+    print('Test 3 expected:', expected)
     print('        actual: ', answer)
 
 def digits_in_power(n, k):
@@ -260,7 +260,7 @@ def digits_in_power(n, k):
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement this function.
+    # DONE: 7. Implement this function.
     #   It TESTS the  fancy_sums_of_digits  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -273,9 +273,21 @@ def run_test_fancy_sums_of_digits():
     print('--------------------------------------------------')
 
     # Test 1:
-    expected = 8
+    expected = 1
     answer = fancy_sums_of_digits(10)
     print('Test 1 expected:', expected)
+    print('        actual: ', answer)
+
+    # Test 2:
+    expected = 19084
+    answer = fancy_sums_of_digits(2)
+    print('Test 2 expected:', expected)
+    print('        actual: ', answer)
+
+    # Test 3:
+    expected = 123409
+    answer = fancy_sums_of_digits(35)
+    print('Test 3 expected:', expected)
     print('        actual: ', answer)
 
     # -------------------------------------------------------------------------
@@ -319,6 +331,14 @@ def fancy_sums_of_digits(n):
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ###########################################################################
     # -------------------------------------------------------------------------
+
+    x = sum_of_digits(n ** 1000)
+    y = sum_of_digits(n ** 999)
+    product = x ** y
+    answer = sum_of_digits(product)
+    return answer
+
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

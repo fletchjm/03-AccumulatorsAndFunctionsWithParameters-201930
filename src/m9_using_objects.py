@@ -9,7 +9,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
-
+import math
 
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
@@ -17,6 +17,7 @@ def main():
 
     two_circles()
     circle_and_rectangle()
+    lines()
 
 
 def two_circles():
@@ -87,7 +88,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -110,19 +111,24 @@ def circle_and_rectangle():
     Circle1.attach_to(window)
     Rectangle1.attach_to(window)
 
-
+    print(Circle1.outline_thickness)
     print('blue')
-    print(center_point)
-    print(center_point.x)
-    print(center_point.y)
+    print(Circle1.center)
+    print(Circle1.center.x)
+    print(Circle1.center.y)
+
+    midlex = math.sqrt(((corner1.x - corner2.x) / 2) ** 2) + corner1.x
+    midley = math.sqrt(((corner1.y - corner2.y) / 2) ** 2) + corner1.y
+
+    center_point = rg.Point(midlex, midley)
+
+    print(Rectangle1.outline_thickness)
+    print(Rectangle1.fill_color)
+    print(Rectangle1.get_center())
+    print(Rectangle1.get_center().x)
+    print(Rectangle1.get_center().y)
 
 
-    print(corner1)
-    print(corner2)
-    print(corner1.x)
-    print(corner1.y)
-    print(corner2.x)
-    print(corner2.y)
 
     window.render()
 
@@ -155,12 +161,34 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
 
     window = rg.RoseWindow()
 
-    line1 = rg.Line(10,100)
-    line2 = rg.Line()
+    start1 = rg.Point(10, 100)
+    end1 = rg.Point(200, 250)
+    start2 = rg.Point(50, 50)
+    end2 = rg.Point(100, 50)
+
+    line1 = rg.Line(start1, end1)
+    line2 = rg.Line(start2, end2)
+    line2.thickness = 5
+
+    line1.attach_to(window)
+    line2.attach_to(window)
+
+    window.render()
+
+    midepoint = line2.get_midpoint()
+
+    print(midepoint)
+    print(midepoint.x)
+    print(midepoint.y)
+
+    window.close_on_mouse_click()
+
+
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
